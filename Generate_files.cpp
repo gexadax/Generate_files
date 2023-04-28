@@ -7,7 +7,7 @@
 #include <ctime>
 #include <queue>
 
-
+using namespace std;
 
 const string FILE_NAME = "numbers.txt";
 const int CHUNK_SIZE = 1000000; // размер фрагмента файла
@@ -116,4 +116,11 @@ void sortFile() {
     string finalFileName = tempFileNames.front();
     rename(finalFileName.c_str(), FILE_NAME.c_str());
 
+}
+
+int main() {
+    int numCount = 100000000; // 100 млн чисел
+    generateFile(numCount);
+    sortFile();
+    return 0;
 }
